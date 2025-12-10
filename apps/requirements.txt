@@ -2,7 +2,7 @@ huggingface_hub==0.34.4
 numpy==2.3.5
 openai==2.9.0
 opencv_python==4.11.0.86
-Pillow==12.0.0
+Pillow==11.0.0
 Requests==2.32.5
 streamlit==1.42.0
 tensorflow==2.18.0
