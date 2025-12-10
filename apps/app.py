@@ -95,7 +95,7 @@ def custom_standardization(input_string):
     lowercase = tf.strings.lower(input_string)
     return tf.strings.regex_replace(lowercase, "[%s]" % re.escape(strip_chars), "")
 
-def build_text_vectorizer(pkl_path="src/vectorizer_data.pkl", max_length=20):
+def build_text_vectorizer(pkl_path="vectorizer_data.pkl", max_length=20):
     try:
         with open(pkl_path, "rb") as f:
             data = pickle.load(f)
