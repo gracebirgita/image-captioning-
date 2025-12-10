@@ -6,7 +6,6 @@ import json
 import time
 
 import re
-import cv2
 import numpy as np
 import tensorflow as tf
 import os
@@ -19,7 +18,7 @@ from huggingface_hub import hf_hub_download
 
 # path dr hugging face
 model_path = "grcb05/image-captioning-transformer/model_epoch21.keras"
-from apps.captioning_model_classes import(
+from captioning_model_classes import(
     CaptionTrainer, 
     TransformerDecoder, 
     DecoderLayer, 
