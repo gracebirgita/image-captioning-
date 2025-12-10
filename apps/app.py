@@ -18,7 +18,7 @@ from huggingface_hub import hf_hub_download
 
 # path dr hugging face
 model_path = "grcb05/image-captioning-transformer/model_epoch21.keras"
-from captioning_model_classes import(
+from apps.captioning_model_classes import(
     CaptionTrainer, 
     TransformerDecoder, 
     DecoderLayer, 
