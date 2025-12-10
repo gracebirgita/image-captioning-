@@ -6,7 +6,6 @@ import json
 import time
 
 import re
-import cv2
 import numpy as np
 import tensorflow as tf
 import os
