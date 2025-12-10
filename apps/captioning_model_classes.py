@@ -7,7 +7,7 @@ import re, string
 import keras
 import collections
 
-import os, json, time, cv2
+import os, json, time
 from tensorflow.keras import layers, models
 from tensorflow.keras.applications import EfficientNetB0
 from tensorflow.keras.preprocessing import image
