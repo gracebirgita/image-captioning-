@@ -496,3 +496,31 @@ class CaptionTrainer(tf.keras.Model):
     @property
     def metrics(self):
         return [self.loss_tracker, self.acc_tracker]
+
+# warmuplinear
+@keras.saving.register_keras_serializable()
+class WarmUpLinear(tf.keras.optimizers.schedules.LearningRateSchedule):
+    def __init__(self, initial_lr, warmup_steps, final_lr, decay_type="linear"):
+        super().__init__()
+        self.initial_lr = initial_lr
+        self.warmup_steps = warmup_steps
+        self.final_lr = final_lr
+        self.decay_type = decay_type
+
+    def __call__(self, step):
+        step = tf.cast(step, tf.float32)
+        # Warmup
+        warmup_lr = self.initial_lr * (step / self.warmup_steps)
+        # Linear decay
+        linear_lr = tf.linspace(self.initial_lr, self.final_lr, 10000)[tf.cast(step, tf.int32) % 10000]
+
+        # Choose based on step
+        return tf.where(step < self.warmup_steps, warmup_lr, linear_lr)
+
+    def get_config(self):
+        return {
+            "initial_lr": self.initial_lr,
+            "warmup_steps": self.warmup_steps,
+            "final_lr": self.final_lr,
+            "decay_type": self.decay_type,
+        }
