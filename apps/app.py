@@ -99,7 +99,7 @@ def custom_standardization(input_string):
     return tf.strings.regex_replace(lowercase, "[%s]" % re.escape(strip_chars), "")
 
 
-def build_text_vectorizer(pkl_path="vectorizer_data.pkl", max_length=20):
+def build_text_vectorizer(pkl_path=PKL_FILE_PATH, max_length=20):
     try:
         with open(pkl_path, "rb") as f:
             data = pickle.load(f)
@@ -118,7 +118,7 @@ def build_text_vectorizer(pkl_path="vectorizer_data.pkl", max_length=20):
     except FileNotFoundError:
         raise ValueError("Vectorizer pickle not found...")
     
-vectorizer, vocab = build_text_vectorizer(pkl_path="vectorizer_data.pkl", max_length=20)
+vectorizer, vocab = build_text_vectorizer(pkl_path=PKL_FILE_PATH, max_length=20)
 # vocab = tokenizer.get_vocabulary()
 index_lookup = dict(zip(range(len(vocab)), vocab))
 
