@@ -12,6 +12,7 @@ import os
 import pickle
 import tempfile
 from tensorflow.keras.applications.efficientnet import preprocess_input as efficient_preprocess
+from pathlib import Path
 
 
 from huggingface_hub import hf_hub_download
@@ -32,6 +33,8 @@ VOCAB_SIZE=10000
 HF_TOKEN=st.secrets["HF_TOKEN"]
 api_key = st.secrets["OPENROUTER_API_KEY"]
 # print("API Key loaded:", api_key[:4] + "..." )
+current_script_dir = Path(__file__).parent 
+PKL_FILE_PATH = current_script_dir / "vectorizer_data.pkl"
 
 # Set page configuration
 st.set_page_config(
@@ -94,6 +97,7 @@ def custom_standardization(input_string):
 
     lowercase = tf.strings.lower(input_string)
     return tf.strings.regex_replace(lowercase, "[%s]" % re.escape(strip_chars), "")
+
 
 def build_text_vectorizer(pkl_path="vectorizer_data.pkl", max_length=20):
     try:
