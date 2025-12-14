@@ -16,8 +16,8 @@ This project aims to develop an advanced automatic image captioning system that 
 1.  **Input:** An image is uploaded to the system.
 2.  **Encoder (EfficientNetB0):** The image is processed to generate feature representations.
 3.  **Decoder (Transformer):** Features are translated into a raw, objective caption.
-4.  **Prompt Engineering:** The predicted caption(from model) is used within a prompt sent to the Mistral API.
-5.  **LLM (Mistral Small 24B):** The LLM converts the raw text into a social media-ready caption (+ hashtags).
+4.  **Prompt Engineering:** The **predicted caption(from model)** is used within a prompt sent to the Mistral API.
+5.  **LLM (Mistral Small 24B):** The LLM converts the **predicted caption** into a social media-ready caption (+ hashtags).
 6.  **Output:** The final upload-ready text.
 
 <br>
