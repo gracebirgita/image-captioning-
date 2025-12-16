@@ -1,6 +1,10 @@
 # Social Media Image Captioning
 Deployed apps : https://social-media-captioning.streamlit.app/ <br>
-PPT: https://www.canva.com/design/DAG7XDYFt2I/bEKJJIOpGMf_becPWhr3Vw/edit?utm_content=DAG7XDYFt2I&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton  
+<br>
+
+
+- PPT: https://www.canva.com/design/DAG7XDYFt2I/bEKJJIOpGMf_becPWhr3Vw/edit?utm_content=DAG7XDYFt2I&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton  
+
 <br>
 
 ## Project Description
